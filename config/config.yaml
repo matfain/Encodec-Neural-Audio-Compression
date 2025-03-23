@@ -1,0 +1,68 @@
+common:
+  save_interval: 1
+  test_interval: 1
+  log_interval: 100
+  max_epoch: 100
+  seed: 3401
+  amp: False
+  port: 6004 # Change every slurm run
+  speech_sample_path: '/home/yandex/APDL2425a/group_3/Encodec_project/datasets/parsed_downloads/LibriSpeech360/LibriTTS_R/train-clean-360/7245/104888/7245_104888_000044_000000.wav'
+  music_sample_path: '' # '/home/yandex/APDL2425a/group_3/Encodec_project/datasets/parsed_downloads/FMA_Small/2018655052_small/144/144180.mp3'
+  general_audio_sample_path: '' # '/home/yandex/APDL2425a/group_3/Encodec_project/datasets/parsed_downloads/FSD_50K/FSD50K.eval_audio/180737.wav'
+
+datasets:
+  train_csv_path: /home/yandex/APDL2425a/group_3/Encodec_project/datasets/parsed_downloads/dataset_all_Librispeech/train.csv
+  test_csv_path: /home/yandex/APDL2425a/group_3/Encodec_project/datasets/parsed_downloads/dataset_all_Librispeech/validation.csv
+  batch_size: 4 #OG was 12
+  tensor_cut: 72000
+  num_workers: 4
+  fixed_length: 0
+  pin_memory: True
+
+checkpoint:
+  resume: True
+  checkpoint_path: '/home/yandex/APDL2425a/group_3/Encodec_project/outputs/2025-03-11/08-14-43/checkpoints/models_folder/bs4_cut72000_epoch8_Generator.pt'
+  disc_checkpoint_path: '/home/yandex/APDL2425a/group_3/Encodec_project/outputs/2025-03-11/08-14-43/checkpoints/models_folder/bs4_cut72000_epoch8_Discriminator.pt'
+  save_folder: './checkpoints/'
+  save_models_folder :  '${checkpoint.save_folder}/models_folder/'
+  save_test_samples_folder: '${checkpoint.save_folder}/samples_folder/'
+
+optimization:
+  lr: 2e-4
+  disc_lr: 1e-4
+  grad_accum_steps: 3   # Set this >1 to accumulate gradients over multiple mini-batches
+
+lr_scheduler:
+  warmup_epoch: 5 # Og was 5
+
+model:
+  target_bandwidths: [1.5, 3., 6., 12., 24.]
+  sample_rate: 24_000
+  channels: 1 # 1 , 2 is for stereo option with music
+  train_discriminator: True # you can set it to 2/3 and other number to train discriminator only
+  audio_normalize: True
+  filters: 32
+  ratios: [8, 5, 4, 2]
+  disc_win_lengths: [1024, 2048, 512]
+  disc_hop_lengths: [256, 512, 128]
+  disc_n_ffts: [1024, 2048, 512]
+  causal: True
+  norm: 'weight_norm'
+  segment: None
+  name: 'model_just_SPEECH_weak_disc'
+
+distributed:
+  data_parallel: True
+  world_size: 4 #OG was 4
+  find_unused_parameters: False
+  torch_distributed_debug: False
+  init_method: tcp
+
+balancer:
+  weights:
+    l_t: 0.1
+    l_f: 1
+    l_g: 3
+    l_feat: 3
+
+

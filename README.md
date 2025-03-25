@@ -18,21 +18,24 @@ Follow these steps to set up the project locally:
    ```
 
 2. **Create a Conda environment**
+* make sure you have Anaconda or Miniconda installed
+* https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
    ```sh
    conda create --name encodec_env python=3.11
    conda activate encodec_env
    ```
 
-3. **Install dependencies**
+4. **Install dependencies**
    ```sh
    pip install -r requirements.txt
    ```
+*   note that this might take a couple of mintues
 
-4. **Download evaluation models**
+5. **Download evaluation models**
     - Download the `evaluations.zip` file from [Google Drive](https://drive.google.com/file/d/1mr8Id_1uOwbTABbKJAsBjI-OFLmibyjW/view?usp=sharing).
     - Extract the contents and place the `evaluations` folder in the project root.
 
-5. **Run the evaluation notebook**  
+6. **Run the evaluation notebook**  
    Open `evaluations/model_demonstrations.ipynb` in Jupyter Notebook or Jupyter Lab and run the cells to test the model.
 
 Enjoy experimenting with neural audio compression! 🚀

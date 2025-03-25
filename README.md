@@ -37,5 +37,6 @@ Follow these steps to set up the project locally:
 
 6. **Run the evaluation notebook**  
    Open `evaluations/model_demonstrations.ipynb` in Jupyter Notebook or Jupyter Lab and run the cells to test the model.
+* make sure to choose the 'encodec_env' as the kernel / environment 
 
 Enjoy experimenting with neural audio compression! 🚀

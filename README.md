@@ -32,7 +32,7 @@ Follow these steps to set up the project locally:
    *   note that this might take a couple of mintues
 
 5. **Download evaluation models**
-    - Download the `evaluations.zip` file from [Google Drive](https://drive.google.com/file/d/1mr8Id_1uOwbTABbKJAsBjI-OFLmibyjW/view?usp=sharing).
+    - Download the `evaluations.zip` file from [Google Drive](https://drive.google.com/file/d/1AhHsBFfmj2efsI7fKcdwH7D9ewFyr0gE/view?usp=sharing).
     - Extract the contents and place the `evaluations` folder in the project root.
 
 6. **Run the evaluation notebook**

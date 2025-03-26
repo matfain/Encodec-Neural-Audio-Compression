@@ -30,7 +30,6 @@ checkpoint:
 optimization:
   lr: 2e-4
   disc_lr: 1e-4
-  grad_accum_steps: 3   # Set this >1 to accumulate gradients over multiple mini-batches
 
 lr_scheduler:
   warmup_epoch: 5 # Og was 5

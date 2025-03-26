@@ -1,8 +1,7 @@
 # Encodec Neural Audio Compression
 
-This project implements the Encodec model, a neural audio codec designed for high-quality and efficient audio compression as presented in the [original paper](https://arxiv.org/pdf/2210.13438). Encodec is developed by FAIR (Facebook AI Research) and leverages deep learning to compress and reconstruct audio signals with minimal loss in quality.  
-
-For a detailed review of our re-implementation process and more information about the model architecture you can check our [full report](INSERT LINK).
+In this project, we re-implement the EnCodec: High Fidelity Neural Audio Compression model by Meta FAIR, aiming to replicate its training process and evaluate its performance, as presented in the [original paper](https://arxiv.org/pdf/2210.13438). Encodec leverages deep learning to compress and reconstruct audio signals with minimal loss in quality.   
+Our model was trained on the full [LibriSpeech dataset](https://www.openslr.org/12) with limited computational resources and for a detailed review of our re-implementation process and more information about the model architecture you can check our [full report](https://drive.google.com/file/d/1rpgW-c6JSY7evX8XgkhKr-5Haa_joY1M/view?usp=sharing).
 
 ## Model Demonstrations & Evaluation Notebook
 In the evaluation directory, you can find a Jupyter notebook that demonstrates our trained Encodec model's performance on various audio samples. The notebook includes code snippets to load the model, compress audio files, and reconstruct the compressed audio signals. You can use this notebook to evaluate the model's performance on our or yours audio samples.
@@ -49,4 +48,4 @@ Follow these steps to set up the project locally:
 Enjoy experimenting with neural audio compression! 🚀
 
 ## Acknowledgement  
-The great majority of the training code is based on the [attached repository](https://github.com/ZhikangNiu/encodec-pytorch). 
+The great majority of the training code is based on [Zhikang Niu's repository](https://github.com/ZhikangNiu/encodec-pytorch). 

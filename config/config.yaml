@@ -38,7 +38,7 @@ model:
   target_bandwidths: [1.5, 3., 6., 12., 24.]
   sample_rate: 24_000
   channels: 1 # 1 , 2 is for stereo option with music
-  train_discriminator: True # you can set it to 2/3 and other number to train discriminator only
+  train_discriminator: True 
   audio_normalize: True
   filters: 32
   ratios: [8, 5, 4, 2]

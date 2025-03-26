@@ -1,9 +1,11 @@
 # Encodec Neural Audio Compression
 
-This project implements the Encodec model, a neural audio codec designed for high-quality and efficient audio compression. Encodec is developed by FAIR (Facebook AI Research) and leverages deep learning to compress and reconstruct audio signals with minimal loss in quality.
+This project implements the Encodec model, a neural audio codec designed for high-quality and efficient audio compression as presented in the [original paper](https://arxiv.org/pdf/2210.13438). Encodec is developed by FAIR (Facebook AI Research) and leverages deep learning to compress and reconstruct audio signals with minimal loss in quality.  
+
+For a detailed review of our re-implementation process and more information about the model architecture you can check our [full report](INSERT LINK).
 
 ## Model Demonstrations & Evaluation Notebook
-In the evaluation directory, you can find a Jupyter notebook that demonstrates the Encodec model's performance on various audio samples. The notebook includes code snippets to load the model, compress audio files, and reconstruct the compressed audio signals. You can use this notebook to evaluate the model's performance on our or yours audio samples.
+In the evaluation directory, you can find a Jupyter notebook that demonstrates our trained Encodec model's performance on various audio samples. The notebook includes code snippets to load the model, compress audio files, and reconstruct the compressed audio signals. You can use this notebook to evaluate the model's performance on our or yours audio samples.
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 
@@ -45,3 +47,6 @@ Follow these steps to set up the project locally:
    * make sure to choose the 'encodec_env' as the kernel / environment 
    
 Enjoy experimenting with neural audio compression! 🚀
+
+## Acknowledgement  
+The great majority of the training code is based on the [attached repository](https://github.com/ZhikangNiu/encodec-pytorch). 
